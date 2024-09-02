@@ -38,20 +38,36 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
     
-    int posicaoX=2; 
-    int posicaoY=2; 
-    int tabuleiro[2][2]={
-        {1, 3},
-        {4, 3}
+    int posicaoX=10; 
+    int posicaoY=10; 
+    int tabuleiro[10][10]={
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0},
+        {0,0,0,0,0,0,0,0,0,0}
     };
-
     
     for (int i = 0; i < posicaoX; i++)
     {
        for (int j = 0; j < posicaoY; j++)
        {
-            printf("Parte do navio posicionado na casa %d\n", tabuleiro[i][j]);
+            if(i==2 && j<4){
+                tabuleiro[i][j]=3;
+            }
+            if(i==4 && j>2 && j<7){
+                tabuleiro[i][j]=3;
+            }
+           
+            printf("  %d",tabuleiro[i][j]);
+            
        }
+       printf("\n");
     }
     
 
