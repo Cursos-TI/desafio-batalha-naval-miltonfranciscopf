@@ -41,8 +41,8 @@ int main() {
     int posicaoX=2; 
     int posicaoY=2; 
     int tabuleiro[2][2]={
-        {1, 2},
-        {3, 4}
+        {1, 3},
+        {4, 3}
     };
 
     
