@@ -38,36 +38,38 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
     
-    int posicaoX=10; 
-    int posicaoY=10; 
-    int tabuleiro[10][10]={
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
+    int posicaoX=5; 
+    int posicaoY=5; 
+    int tabuleiro[5][5]={
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0}
+        
     };
     
     for (int i = 0; i < posicaoX; i++)
     {
        for (int j = 0; j < posicaoY; j++)
        {
-            if(i==2 && j<4){
-                tabuleiro[i][j]=3;
+            if(i==2 && j<3){
+                tabuleiro[i][j]=3; //posicao navio 1 horizontal
             }
-            if(i==4 && j>2 && j<7){
-                tabuleiro[i][j]=3;
+            if(i==4 && j>1 && j<6){
+                tabuleiro[i][j]=3; //posicao navio 2 horizontal
             }
-           
-            printf("  %d",tabuleiro[i][j]);
-            
+                 
        }
-       printf("\n");
+    }
+    
+ for (int k = 0; k < posicaoX; k++)
+    {
+       for (int m = 0;  m< posicaoY; m++)
+       {
+            printf("  %d",tabuleiro[k][m]);
+       }
+        printf("\n");
     }
     
 
