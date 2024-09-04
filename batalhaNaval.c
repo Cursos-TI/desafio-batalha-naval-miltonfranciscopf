@@ -57,17 +57,28 @@ int main() {
     {
        for (int j = 0; j < posicaoY; j++)
        {
+
             if(i==2 && j<4){
                 tabuleiro[i][j]=3; //posicao navio 1 horizontal
             }
+
             if(i==4 && j>2 && j<7){
                 tabuleiro[i][j]=3; //posicao navio 2 horizontal
             }
-                      
+
+            if(i>4 && i<9 && j>7 && j<9){ 
+                tabuleiro[i][j]=3; //posicao navio 3 diagonal
+            }
+
+            if(i>4 && i<9 && j>1 && j<3){
+                tabuleiro[i][j]=3; //posicao navio 4 diagonal
+            }  
+
        }
     }
-    
- for (int k = 0; k < posicaoX; k++)
+
+    //imprimir
+    for (int k = 0; k < posicaoX; k++)
     {
        for (int m = 0;  m< posicaoY; m++)
        {
@@ -76,6 +87,5 @@ int main() {
         printf("\n");
     }
     
-
     return 0;
 }
