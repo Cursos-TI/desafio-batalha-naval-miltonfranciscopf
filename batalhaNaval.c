@@ -4,7 +4,9 @@
     // Desafio Batalha Naval - MateCheck
     // Este código inicial serve como base para o desenvolvimento do sistema de Batalha Naval.
     // Siga os comentários para implementar cada parte do desafio.
-
+#define POSICAOX 10
+#define POSICAOY 10
+//X e Y linha e coluna 
 
 int main() {
     // Nível Novato - Posicionamento dos Navios
@@ -38,9 +40,8 @@ int main() {
     // 1 1 1 1 1
     // 0 0 1 0 0
     
-    int posicaoX=10; 
-    int posicaoY=10; 
-    int tabuleiro[10][10]={
+ 
+    int tabuleiro[POSICAOX][POSICAOY]={
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
         {0,0,0,0,0,0,0,0,0,0},
@@ -53,34 +54,40 @@ int main() {
         {0,0,0,0,0,0,0,0,0,0}
     };
     
-    for (int i = 0; i < posicaoX; i++)
+    for (int i = 0; i < POSICAOX; i++)
     {
-       for (int j = 0; j < posicaoY; j++)
+       for (int j = 0; j < POSICAOY; j++)
        {
-
-            if(i==2 && j<4){
-                tabuleiro[i][j]=3; //posicao navio 1 horizontal
+            if(i==2 && j<4){//posicao navio 1 horizontal
+                tabuleiro[i][j]=3; 
             }
 
-            if(i==4 && j>2 && j<7){
-                tabuleiro[i][j]=3; //posicao navio 2 horizontal
+            if(i==4 && j>2 && j<7){//posicao navio 2 horizontal
+                tabuleiro[i][j]=3; 
             }
-
-            if(i>4 && i<9 && j>7 && j<9){ 
-                tabuleiro[i][j]=3; //posicao navio 3 diagonal
-            }
-
-            if(i>4 && i<9 && j>1 && j<3){
-                tabuleiro[i][j]=3; //posicao navio 4 diagonal
-            }  
+            
+            if(i==5 && j==8){//posicao navio 3 diagonal
+                tabuleiro[i][j]=3;
+                tabuleiro[i+1][j-1]=3;
+                tabuleiro[i+2][j-2]=3;
+                tabuleiro[i+3][j-3]=3;
+                
+            } 
+            if(i==6 && j==0){//posicao navio 4 diagonal
+                tabuleiro[i][j]=3;
+                tabuleiro[i+1][j+1]=3;
+                tabuleiro[i+2][j+2]=3;
+                tabuleiro[i+3][j+3]=3;
+                
+            } 
 
        }
     }
 
     //imprimir
-    for (int k = 0; k < posicaoX; k++)
+    for (int k = 0; k < POSICAOX; k++)
     {
-       for (int m = 0;  m< posicaoY; m++)
+       for (int m = 0;  m< POSICAOY; m++)
        {
             printf("  %d",tabuleiro[k][m]);
        }
