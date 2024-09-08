@@ -52,6 +52,7 @@ int main() {
     }
     
     //imprimir navios
+    printf("POSICAO NAVIOS\n");
     for (int k = 0; k < POSICAOX; k++)
     {
        for (int m = 0;  m< POSICAOY; m++)
@@ -89,8 +90,7 @@ int main() {
         switch (opcao)
         {
         case 1:
-            
-            //habilidade de cone 
+            printf("HABILIDADE CONE\n");
             for (int i = 0; i < POSICAOX; i++)
             {
                 for (int j = 0; j < POSICAOY; j++)
@@ -121,7 +121,7 @@ int main() {
             }
             break;
         case 2:
-            //habilidade de octaedro
+            printf("HABILIDADE OCTAEDRO\n");
             cont=0; //contadores para controle
             contadorDois=0;
             int contadorTres=0;;
@@ -167,6 +167,7 @@ int main() {
             }    
             break;
         case 3:
+            printf("HABILIDADE CRUZ\n");
             //habilidades de cruz 
             for (int n = 0; n < POSICAOX; n++)
             {
@@ -194,50 +195,52 @@ int main() {
             break;
         
         default:
-            printf("Opcao Invalida,tente novamente.");
+            printf("Opcao Invalida,tente novamente.\n");
             break;
         }
 
-        //imprimir efeito da habilidade nos navios
-        int tabuleiroTres[POSICAOX][POSICAOY]={
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0},
-        {0,0,0,0,0,0,0,0,0,0}
-        };
-
-        for (int i = 0; i < POSICAOX; i++)
-        {
-            for (int j = 0; j < POSICAOY; j++)
-            {
-                if(tabuleiro[i][j]==3){
-                    tabuleiroTres[i][j]=3;
-                }
-                if(tabuleiro[i][j]==3 && tabuleiroDois[i][j]==1){
-                    tabuleiroTres[i][j]=1;
-                }
-                
-            }
-            
-        }
-        //imprimir resultado o efeito da habilidade nos navios
-        printf("\n");
-        for (int q = 0; q < POSICAOX; q++)
-        {
-            for (int r = 0; r < POSICAOY; r++)
-            {
-                printf("  %d",tabuleiroTres[q][r]);   
-            }
-                
-            printf("\n");
-        }
+        if(opcao==1 || opcao==2 || opcao==3){
+            //imprimir efeito da habilidade nos navios
+            int tabuleiroTres[POSICAOX][POSICAOY]={
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0},
+            {0,0,0,0,0,0,0,0,0,0}
+            };
         
+            for (int i = 0; i < POSICAOX; i++)
+            {
+                for (int j = 0; j < POSICAOY; j++)
+                {
+                    if(tabuleiro[i][j]==3){
+                        tabuleiroTres[i][j]=3;
+                    }
+                    if(tabuleiro[i][j]==3 && tabuleiroDois[i][j]==1){
+                        tabuleiroTres[i][j]=1;
+                    }
+                    
+                }
+                
+            }
+            printf("\n");
+            printf("RESULTADO HABILIDADE NOS NAVIOS\n");
+            for (int q = 0; q < POSICAOX; q++)
+            {
+                for (int r = 0; r < POSICAOY; r++)
+                {
+                    printf("  %d",tabuleiroTres[q][r]);   
+                }
+                    
+                printf("\n");
+            }
+        
+        }
         
     } while (opcao!=4);
     
