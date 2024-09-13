@@ -228,8 +228,18 @@ int main() {
                 }
                 
             }
+            printf("NAVIOS (ANTES) DAS HABILIDADES\n");
+            for (int x = 0; x < POSICAOX; x++)
+            {
+                for (int y = 0; y < POSICAOY; y++)
+                {
+                    printf("  %d",tabuleiro[x][y]);   
+                }
+                    
+                printf("\n");
+            }
             printf("\n");
-            printf("RESULTADO HABILIDADE NOS NAVIOS\n");
+            printf("(RESULTADO) HABILIDADE NOS NAVIOS\n");
             for (int q = 0; q < POSICAOX; q++)
             {
                 for (int r = 0; r < POSICAOY; r++)
@@ -239,6 +249,10 @@ int main() {
                     
                 printf("\n");
             }
+            printf("\n");
+            
+            
+
         
         }
         
